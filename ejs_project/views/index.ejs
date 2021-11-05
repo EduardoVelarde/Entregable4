@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ingresa nuevo producto</h1>
+    <form action="products" method="post" >
+        <label for="name" >Nombre del producto</label>
+        <input type="text" name="name" id="name" class="form-control">
+        <label for="price" >Price</label>
+        <input type="text" name="price" id="price" class="form-control">
+        <label for="url" >Url</label>
+        <input type="text" name="url" id="url" class="form-control">
+
+        <input type="submit" value="SUBMIT" >
+    </form>
+    <h1>Lista de Prouductos actuales</h1>
+    <ul>
+        <% data.forEach(element => { %>
+            
+            <li><%= element.name %> </li>
+            <li><%= element.price %> $ </li>
+            <li><img src="<%= element.url %>" alt="" style="height: 40px;"> </li>
+            <%}); %>
+    </ul>
+    
+</body>
+</html>
